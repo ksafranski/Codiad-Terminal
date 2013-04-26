@@ -1,0 +1,9 @@
+[ { "author" : "Fluidbyte",
+    "version" : "1.0",
+    "name" : "Terminal",
+    "rightbar" : [{
+        "action" : "codiad.terminal.open();",
+        "icon" : "icon-monitor",
+        "title" : "Terminal"
+        }]
+  } ]
