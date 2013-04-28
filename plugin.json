@@ -1,6 +1,7 @@
 [ { "author" : "Fluidbyte",
     "version" : "1.0",
     "name" : "Terminal",
+    "url" : "https://github.com/Fluidbyte/Codiad-Terminal.git",
     "rightbar" : [{
         "action" : "codiad.terminal.open();",
         "icon" : "icon-monitor",
