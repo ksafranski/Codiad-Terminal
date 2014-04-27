@@ -21,8 +21,7 @@
 <button onclick="codiad.modal.unload(); return false;">Close Terminal</button>
 <script>
     $(function(){ 
-        var wheight = $(window)
-            .outerHeight() - 300;
+        var wheight = $(window).outerHeight() * 0.5;
         $('#terminal').css('height',wheight+'px');
     });
 </script>
