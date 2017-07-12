@@ -55,17 +55,17 @@
         ////////////////////////////////////////////////////
         
         public function __construct(){
-            if(!isset($_SESSION['dir']) || empty($_SESSION['dir'])){
+            if(!isset($_SESSION['dir']) || !isset($_SESSION['dir'][$_SESSION['project']]) || empty($_SESSION['dir'][$_SESSION['project']])){
                 if(ROOT==''){
                     $this->command_exec = 'pwd';
                     $this->Execute();
-                    $_SESSION['dir'] = $this->output;
+                    $_SESSION['dir'][$_SESSION['project']] = $this->output;
                 }else{
                     $this->directory = ROOT;
                     $this->ChangeDirectory();
                 }
             }else{
-                $this->directory = $_SESSION['dir'];
+                $this->directory = $_SESSION['dir'][$_SESSION['project']];
                 $this->ChangeDirectory();
             }
         }
@@ -120,7 +120,7 @@
         public function ChangeDirectory(){
             chdir($this->directory);
             // Store new directory
-            $_SESSION['dir'] = exec('pwd');
+            $_SESSION['dir'][$_SESSION['project']] = exec('pwd');
         }
         
         ////////////////////////////////////////////////////
