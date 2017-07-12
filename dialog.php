@@ -23,6 +23,6 @@
     $(function(){ 
         var wheight = $(window).outerHeight() * 0.5;
         $('#terminal').css('height',wheight+'px');
-        $('#terminal').attr('src', codiad.terminal.path + "emulator/index.php?id=kd9kdi8nundj");
+        $('#terminal').attr('src', codiad.terminal.path + "emulator/index.php");
     });
 </script>
