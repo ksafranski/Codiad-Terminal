@@ -101,7 +101,7 @@
             
             // Replace text editors with cat
             $editors = array('vim','vi','nano');
-            $this->command = str_replace($editors,'cat',$this->command);
+            $this->command = preg_replace('/^('.join('|', $editors).')/', 'cat', trim($this->command));
             
             // Handle blocked commands
             $blocked = explode(',',BLOCKED);
