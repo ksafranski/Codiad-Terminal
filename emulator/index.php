@@ -16,6 +16,8 @@ require_once('../../../common.php');
 
 checkSession();
 
+$_SESSION['dir'] = $_GET['project_path'];
+
 ?>
 <!doctype html>
 
