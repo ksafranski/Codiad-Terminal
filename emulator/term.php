@@ -30,7 +30,7 @@
     // Globals
     //////////////////////////////////////////////////////////////////
     
-    define('ROOT',WORKSPACE . '/' . $_SESSION['project']);
+    define('ROOT', $_SESSION['project'][0] == '/' ? $_SESSION['project'] : WORKSPACE.'/'.$_SESSION['project']);
     define(' ','ssh,telnet');
     
     //////////////////////////////////////////////////////////////////
