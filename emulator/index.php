@@ -23,6 +23,26 @@ checkSession();
     <meta charset="utf-8">
     <title>Terminal</title>
     <link rel="stylesheet" href="css/screen.css">
+    <script>
+        var commands = [];
+        var which_command = 0;
+
+        $('#the_input_term').keydown(function (e) {
+            if (e.keyCode === 13) {
+                commands.push($('#the_input_term').val());
+            }
+        });
+
+        $(document).keydown(function(e){
+            if(e.keyCode == 38 && $("#the_input_term").is(":focus")){
+                var cc = (commands.length - which_command++ - 1);
+                if(cc >= 0) { $('#the_input_term').value = commands[cc]; }
+            } else if(e.keyCode == 40 && $("#the_input_term").is(":focus")) {
+                var cc = (commands.length - which_command-- - 1);
+                if(cc < commands.length) { $('#the_input_term').value = commands[cc]; }
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -34,7 +54,7 @@ checkSession();
     
         <div id="command">
             <div id="prompt">&gt;</div>
-            <input type="text">
+            <input type="text" id='the_input_term'>
         </div>
     
     </div>
